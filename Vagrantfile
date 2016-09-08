@@ -54,6 +54,8 @@ Vagrant.configure('2') do |config|
       # chef.add_recipe "java::oracle"
       # chef.add_recipe "openldap::server"
       chef.add_recipe 'ms_cerner'
+      chef.add_recipe 'ms_cerner::helloworldfile'
+      
       # chef.add_recipe 'ms_cerner::default'
     end
   end
