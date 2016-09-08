@@ -13,8 +13,8 @@ package 'apache2' do
   action :install
 end
 
-service 'apache2' do
-  action [:start, :reload]
-end
+# service 'apache2' do
+#   action [:nothing]
+# end
 
 # node['ms_cerner']['var1']

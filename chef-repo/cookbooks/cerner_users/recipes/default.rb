@@ -9,9 +9,9 @@
 
 # include_recipe 'apt'
 
-package 'apache2'do 
-  version node['cerner_users']['apache_vers']
-end
+# package 'apache2'do 
+#   version node['cerner_users']['apache_vers']
+# end
 
 node.override['cerner_users']["users"] = ['ms1', 'ms2']
 
@@ -29,3 +29,12 @@ users.each do |cs_user|
     action [:create, :modify]
   end
 end
+
+service 'apache2' do
+  action [:reload]
+  subscribes :create, "template['/var/www/html/index.html']", :timer
+end
+
+include_recipe 'cerner_users::apache'
+
+
