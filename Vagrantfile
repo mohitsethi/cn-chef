@@ -34,12 +34,13 @@ Vagrant.configure('2') do |config|
     vm_config.vm.network "forwarded_port", guest: 80, host: 8080
 
     vm_config.vm.provision "chef_client" do |chef|
-      chef.log_level = ENV['CHEF_LOG'] || 'debug'
+      # chef.log_level = ENV['CHEF_LOG'] || 'debug'
       chef.install       = true
       chef.chef_server_url = "https://api.chef.io/organizations/cerner-chef"
       chef.validation_key_path = "./chef-repo/.chef/cerner-chef-validator.pem"
       chef.node_name = "cernerdev01"
       chef.validation_client_name = 'cerner-chef-validator'
+      chef.environment = "cerner_stage"
 
       # chef.http_proxy    = proxy
       # chef.https_proxy   = proxy
@@ -53,9 +54,12 @@ Vagrant.configure('2') do |config|
       # chef.add_role "workstation"
       # chef.add_recipe "java::oracle"
       # chef.add_recipe "openldap::server"
-      chef.add_recipe 'ms_cerner'
-      chef.add_recipe 'ms_cerner::helloworldfile'
-      
+      # chef.add_recipe 'ms_cerner'
+      # chef.add_recipe 'ms_cerner::helloworldfile'
+      # chef.add_recipe 'cerner_users'
+
+      chef.add_role 'base_cerner'
+
       # chef.add_recipe 'ms_cerner::default'
     end
   end
