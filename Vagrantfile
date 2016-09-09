@@ -58,7 +58,8 @@ Vagrant.configure('2') do |config|
       # chef.add_recipe 'ms_cerner::helloworldfile'
       # chef.add_recipe 'cerner_users'
 
-      chef.add_role 'base_cerner'
+      # chef.add_role 'base_cerner'
+      chef.add_recipe 'cerner_product1'
 
       # chef.add_recipe 'ms_cerner::default'
     end
