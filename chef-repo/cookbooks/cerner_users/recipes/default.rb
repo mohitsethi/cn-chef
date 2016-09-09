@@ -9,7 +9,7 @@
 
 # # include_recipe 'apt'
 
-# # package 'apache2'do 
+# # package 'apache2'do
 # #   version node['cerner_users']['apache_vers']
 # # end
 
@@ -37,10 +37,4 @@
 
 # include_recipe 'cerner_users::apache'
 
-
-
-
-
-
-
-
+package 'apache2'

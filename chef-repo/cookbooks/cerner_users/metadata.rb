@@ -7,3 +7,6 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.12'
 
 depends 'apt'
+
+issues_url 'https://github.com/chef-cookbooks/something/issues'
+source_url 'https://github.com/chef-cookbooks/something/issues'

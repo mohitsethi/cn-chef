@@ -1,0 +1,19 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  -
+    driver_config:
+      box: opscode-ubuntu-14.04
+    name: ubuntu-1404
+    driver_plugin: vagrant
+
+suites:
+  - name: default
+    run_list:
+      - recipe[cerner_users::default]
+    attributes:
