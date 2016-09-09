@@ -89,7 +89,8 @@ Vagrant.configure('2') do |config|
       # chef.add_role "workstation"
       # chef.add_recipe "java::oracle"
       # chef.add_recipe "openldap::server"
-      chef.add_recipe 'ms_cerner'
+      # chef.add_recipe 'ms_cerner'
+      chef.add_recipe 'cerner'
       # chef.add_recipe 'ms_cerner::default'
     end
   end
